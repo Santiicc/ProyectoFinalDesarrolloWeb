@@ -9,7 +9,7 @@ function App() {
 
   return (
     <Card photogame={'https://th.bing.com/th/id/R.f73d8efb44084da88756da6779eed573?rik=qqRvg4muwgW2sw&pid=ImgRaw&r=0'}
-    namegame={'BioMutant'} date={'21/4/2022'} genres={['Rol','Rpg']} ranking={'42'} platforms={['PlayStation','Xbox']}
+    namegame={'BioMutant'} date={'21/4/2022'} genres={['Rol','Rpg']} ranking={'42'} platforms={['PlaySa']}
     >
 
     </Card>
