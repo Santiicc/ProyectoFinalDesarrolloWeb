@@ -29,7 +29,7 @@ const SearchBar = () => {
     <button onClick={handleClear}>Delete</button>
       <ul>
         {filteredGames.map((game) => (
-          <li key={game}>{game}</li>
+          <li key={game}>Game Name</li>
         ))}
       </ul>
     </div>
