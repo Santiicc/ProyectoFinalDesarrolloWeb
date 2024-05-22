@@ -1,0 +1,71 @@
+.Img{
+    width: 363px;
+height: 190.51px;
+flex-shrink: 0;
+border-radius: 12px;
+}
+
+.CardDiv{
+    width: 363px;
+    height: 314px;
+    flex-shrink: 0;
+    border: 1px solid white;
+    border-radius: 12px;
+    background: #303030;
+}
+
+.TitleGame{
+    width: 293px;
+    height: 33px;
+    flex-shrink: 0;
+    color: #FFF;
+    font-family: Exo;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-align:left;
+}
+
+.Info{
+
+    width: 137px;
+    height: 24px;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    color: #939393;
+    font-family: Exo;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.Info2{
+    display: flex;
+width: 116px;
+height: 24px;
+flex-direction: column;
+justify-content: center;
+flex-shrink: 0;
+color: #FFF;
+font-family: Exo;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+.Ranking{
+    width: 40px;
+height: 20px;
+flex-shrink: 0;
+color: #36B972;
+text-align: right;
+font-family: Exo;
+font-size: 18px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+}
