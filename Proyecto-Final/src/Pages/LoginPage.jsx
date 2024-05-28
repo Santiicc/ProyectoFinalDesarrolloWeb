@@ -1,10 +1,9 @@
-// LoginPage.jsx
 import React, { useState, useEffect } from "react";
 import LoginForm from "../Components/LoginForm"; 
-import MiBoton from "../Components/button";
 import CustomH1 from "../Components/CustomH1"; 
 import CustomP from "../Components/CustomP";
 import CustomCheckbox from "../Components/Checkbox";
+import classes from "../Pages/LoginPage.module.css"; 
 
 const LoginPage = () => {
     const [usuario, setUsuario] = useState("");
@@ -49,34 +48,45 @@ const LoginPage = () => {
     };
 
     return (
-        <div className="container">
+        <div className={classes.container}>
             <CustomH1 fontFamily="Exo" fontSize="20px" fontWeight="700"> Welcome! Log in or register</CustomH1>
             <CustomP fontFamily="Exo" fontSize="16px" fontWeight="400">Log in to find the games you're looking for!</CustomP>
             <form onSubmit={isLogin ? handleLogin : handleRegister}>
-                <label>Email</label>
-                <input 
-                    type="text" 
-                    name="usuario" 
-                    value={usuario} 
-                    onChange={(e) => setUsuario(e.target.value)} 
-                />
-                <label>Password</label>
-                <input 
-                    type="password" 
-                    name="contraseña" 
-                    value={contraseña} 
-                    onChange={(e) => setContraseña(e.target.value)} 
-                />
-                <div className="extra-options">
-                    <CustomCheckbox checked={rememberMe} onChange={handleRememberMe} />
-                    <CustomP fontFamily="Exo" fontSize="14px" fontWeight="400">Remember me</CustomP>
-                    <a href="#">Forgot password?</a>
+                <div className={classes.inputBlock}>
+                    <input 
+                        type="text" 
+                        name="usuario" 
+                        value={usuario} 
+                        onChange={(e) => setUsuario(e.target.value)} 
+                        placeholder="Email"
+                    />
                 </div>
-                <button type="submit">{isLogin ? "Log in" : "Register"}</button>
+                <div className={classes.inputBlock}>
+                    <input 
+                        type="password" 
+                        name="contraseña" 
+                        value={contraseña} 
+                        onChange={(e) => setContraseña(e.target.value)} 
+                        placeholder="Password"
+                    />
+                </div>
+                <div className={classes.checkboxContainer}>
+                    <CustomCheckbox checked={rememberMe} onChange={handleRememberMe} label="Remember me" />
+                    <CustomP fontFamily="Open Sans" fontSize="14px" fontWeight="400">
+                        <a href="#" style={{ color: '#5FE19B', textDecoration: 'none' }}>Forgot password?</a>
+                    </CustomP>
+                </div>
+                <button type="submit" className="custom-button" style={{ fontFamily: 'Exo', fontSize: '18px', fontWeight: '700' }}>
+                    {isLogin ? "Log in" : "Register"}
+                </button>
             </form>
             <button className="switch" onClick={() => setIsLogin(!isLogin)}>
-                {isLogin ? "Not registered yet? Register now" : "Already registered? Log in"}
+                {isLogin ? 
+                    <CustomP fontFamily="Open Sans" fontSize="14px" fontWeight="400">Not registered yet? <span style={{ color: '#5FE19B' }}>Register Now</span></CustomP> :
+                    <CustomP fontFamily="Open Sans" fontSize="14px" fontWeight="400">Already registered? Log in</CustomP>
+                }
             </button>
+
             <div className="social-login-buttons">
                 <button className="facebook">Login with Facebook</button>
                 <button className="twitter">Login with Twitter</button>

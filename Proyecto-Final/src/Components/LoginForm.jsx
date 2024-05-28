@@ -1,4 +1,3 @@
-// LoginForm.jsx
 import React from "react";
 
 const LoginForm = ({ usuario, contraseña, setUsuario, setContraseña, handleSubmit }) => {

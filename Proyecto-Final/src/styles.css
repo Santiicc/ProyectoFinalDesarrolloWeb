@@ -1,4 +1,3 @@
-/* styles.css */
 body {
     background-color: #1d76fa;
     font-family: Arial, sans-serif;
@@ -8,16 +7,6 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-}
-
-.container {
-    background-color: #303030;
-    background-blend-mode: overlay;
-    backdrop-filter: blur(5px);
-    padding: 20px;
-    border-radius: 8px;
-    width: 300px;
-    text-align: center;
 }
 
 h1 {
@@ -42,32 +31,42 @@ input[type="password"] {
     margin-bottom: 10px;
     border: none;
     border-radius: 4px;
+    background-color: #fff;
+    color: #000;
+    font-size: 16px;
 }
 
 button[type="submit"] {
-    background-color: #28a745;
+    background-color: #4CC986;
     color: white;
     padding: 10px;
     border: none;
-    border-radius: 4px;
+    border-radius: 6px;
     cursor: pointer;
     font-size: 1rem;
+    margin-top: 10px;
+    transition: background-color 0.25s;
 }
 
 button[type="submit"]:hover {
-    background-color: #218838;
+    background-color: #36b972;
 }
 
 button.switch {
     background: none;
     border: none;
-    color: #28a745;
+    color: #32c755;
     cursor: pointer;
     margin-top: 10px;
 }
 
+button.switch:focus {
+    outline: none;
+}
+
 button.switch:hover {
     text-decoration: underline;
+    border: none;
 }
 
 .extra-options {
@@ -86,17 +85,13 @@ button.switch:hover {
 }
 
 .extra-options a {
-    color: #28a745;
+    color: #00f83a;
     text-decoration: none;
     font-size: 0.8rem;
 }
 
-extra-options a:hover {
+.extra-options a:hover {
     text-decoration: underline;
-}
-
-.social-login-buttons {
-    margin-top: 20px;
 }
 
 .social-login-buttons button {
@@ -107,85 +102,7 @@ extra-options a:hover {
     border: 2px solid #fff;
     background: none;
     margin: 3px;
-}
-
-.social-login-buttons button.twitter {
-    width: 362px;
-    height: 47px;
-    flex-shrink: 0;
-    border-radius: 6px;
-    border: 2px solid #fff;
-    background: none;
-}
-
-.social-login-buttons button.google {
-    width: 362px;
-    height: 47px;
-    flex-shrink: 0;
-    border-radius: 6px;
-    border: 2px solid #fff;
-    background: none;
+    color: #fff;
 }
 
 
-/* Customize the label (the container) */
-label {
-    display: flex; /* Usar flexbox para alinear los elementos en línea */
-    align-items: center; /* Alinear los elementos verticalmente */
-    position: relative;
-    padding-left: 35px;
-    margin-bottom: 12px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-/* Hide the browser's default checkbox */
-label input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-}
-
-/* Create a custom checkbox */
-.checkmark {
-    position: relative;
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    background-color: #ccc;
-    border-radius: 3px;
-    margin-right: 10px; /* Espacio entre el checkbox y el texto */
-}
-
-/* On mouse-over, add a grey background color */
-label:hover .checkmark {
-    background-color: #ccc;
-}
-
-/* When the checkbox is checked, add a blue background */
-label input:checked ~ .checkmark {
-    background-color: #2196F3;
-}
-
-/* Create the checkmark/indicator (hidden when not checked) */
-.checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
-}
-
-/* Show the checkmark when checked */
-label input:checked ~ .checkmark:after {
-    display: block;
-}
-
-/* Style the checkmark/indicator */
-label .checkmark:after {
-    left: 7px;
-    top: 3px;
-    width: 5px;
-    height: 10px;
-    border: solid white;
-    border-width: 0 3px 3px 0;
-    transform: rotate(45deg);
-}
