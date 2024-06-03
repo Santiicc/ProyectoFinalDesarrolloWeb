@@ -4,7 +4,7 @@ import Platform from "../Utils/Platform";
 import classes2 from "../Styles/Icons.module.css"
 
 
-const Card = ({photogame,namegame , date , genres , ranking , platforms }) => {
+const BigCard = ({photogame,namegame , date , genres , ranking , platforms }) => {
   return (
     <div className={classes.CardDiv}>
 
@@ -53,4 +53,4 @@ const Card = ({photogame,namegame , date , genres , ranking , platforms }) => {
   );
 };
 
-export default Card;
+export default BigCard;
