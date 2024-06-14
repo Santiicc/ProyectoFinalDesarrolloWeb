@@ -8,22 +8,23 @@
     height: 702px;
     flex-shrink: 0;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 0; 
 }
 
+
 .inputField {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: none;
-    border-radius: 4px;
-    background-color: #fff;
-    color: #000;
-    font-size: 16px;
-    box-sizing: border-box;
+    flex-grow: 1;
+    padding-right: 40px;
+    font-family: "Exo";
 }
 
 .inputField::placeholder {
-    color: #888;
+    color: #939393;
 }
 
 .customButton {
@@ -59,44 +60,11 @@
     border: none;
 }
 
-.socialLoginButtons {
-    margin-top: 20px;
-}
-
-.socialLoginButtons button {
-    width: 362px;
-    height: 47px;
-    flex-shrink: 0;
-    border-radius: 6px;
-    border: 2px solid #fff;
-    background: none;
-    margin: 3px;
-    color: #fff;
-}
-
-.socialLoginButtons .twitterButton {
-    width: 362px;
-    height: 47px;
-    flex-shrink: 0;
-    border-radius: 6px;
-    border: 2px solid #fff;
-    background: none;
-}
-
-.socialLoginButtons .googleButton {
-    width: 362px;
-    height: 47px;
-    flex-shrink: 0;
-    border-radius: 6px;
-    border: 2px solid #fff;
-    background: none;
-}
-
 .checkbox-label {
     display: flex;
     align-items: center;
-    position: relative;
-    padding-left: 0; 
+    justify-content: flex-start;
+    padding-left: 0;
     margin-bottom: 12px;
     cursor: pointer;
     font-size: 16px;
@@ -116,7 +84,7 @@
     background-color: transparent;
     border: 2px solid #fff;
     border-radius: 3px;
-    margin-right: 5px; 
+    margin-right: 5px;
 }
 
 .checkbox-label:hover .checkmark {
@@ -155,16 +123,147 @@
 }
 
 .inputBlock {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.passwordContainer {
+    display: flex;
+    align-items: center;
+    position: relative;
 }
 
 .inputBlock input {
-    width: 100%;
+    width: 100%; 
     padding: 10px;
+    padding-right: 40px;
     border-radius: 4px;
-    border: 1px solid #ccc;
+    border: 1px solid #040303;
     font-size: 16px;
-    box-sizing: border-box; 
+    box-sizing: border-box;
+}
+
+.eyeButton {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    background: none; 
+    border: none; 
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.eyeButton img {
+    width: 20px; 
+    height: 20px; 
+}
+
+.facebook,
+.twitter,
+.google {
+    width: 362px;
+    height: 47px;
+    flex-shrink: 0;
+    border-radius: 6px;
+    border: 2px solid #FFF;
+    margin-bottom: 24px;
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+}
+
+.lineContainer {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 20px 0;
+}
+
+.line {
+    flex: 1;
+    height: 1px;
+    background-color: #FFF;
+    margin: 30px;
 }
 
 
+.socialButtons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.socialButtons button {
+    display: flex;
+    align-items: center; 
+    background: none;
+    border: 2px solid #FFF;
+    border-radius: 6px;
+    margin-bottom: 10px; 
+    padding: 10px;
+    cursor: pointer;
+    width: 362px;
+}
+
+.socialButtons button .icon {
+    margin-right: 10px; 
+    display: flex;
+    align-items: center; 
+}
+
+.socialButtons button CustomP {
+    margin: 0; 
+    font-family: "Exo";
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.inputBlock.error input {
+    border: 2px solid #FB5F5F; 
+    
+}
+
+.errorMessage {
+    color: #FB5F5F;
+    font-size: 15px;
+    margin-top: 5px;
+    font-family: "Exo";
+    text-align: left;
+    font-weight: 400;
+    line-height: normal;
+   
+   
+}
+
+.inputBlock {
+    position: relative;
+    margin-bottom: 1cqi;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 362px;
+    height: 47px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    background: #FFF;
+    color: #ccbcbc;
+    font-size: 16px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    text-align: left;
+}
