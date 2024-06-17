@@ -61,6 +61,11 @@ const SearchBar = () => {
     window.location.reload();
   };
 
+  const handleSearchIconClick = () => {
+    setIsFocused(true);
+    inputRef.current.focus();
+  };
+
   return (
     <div>
       <header className={classes.header}>
@@ -69,7 +74,12 @@ const SearchBar = () => {
         </div>
         <div className={classes.searchBarContainer} onFocus={handleFocus} onBlur={handleBlur}>
           <div className={classes.searchBar}>
-            <img src={searchIcon} alt="Search Icon" className={classes.searchIcon} />
+            <img
+              src={searchIcon}
+              alt="Search Icon"
+              className={classes.searchIcon}
+              onClick={handleSearchIconClick}
+            />
             <input
               ref={inputRef}
               type="text"
