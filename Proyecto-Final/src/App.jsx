@@ -1,10 +1,9 @@
-import React from 'react';
-import './App.css'
-
+import SearchBar from "./Components/searchBar.jsx";
+function App() {
   return (
-    <div></div>
-  )
-
-
-
-export default App
+    <div className="App">
+      <SearchBar />
+    </div>
+  );
+}
+export default App;
