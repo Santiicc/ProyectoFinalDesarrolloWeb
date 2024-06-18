@@ -1,9 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const CustomP = ({ fontFamily, fontSize, fontWeight, children }) => {
+const CustomP = ({ fontFamily, fontSize, fontWeight, children, className }) => {
     const style = {
-        color: '#FFF',
         textAlign: 'center',
         fontFamily: fontFamily || 'Exo',
         fontSize: fontSize || '16px',
@@ -12,7 +11,7 @@ const CustomP = ({ fontFamily, fontSize, fontWeight, children }) => {
         lineHeight: 'normal',
     };
 
-    return <p style={style}>{children}</p>;
+    return <p style={style} className={className}>{children}</p>;
 };
 
 CustomP.propTypes = {
@@ -23,6 +22,7 @@ CustomP.propTypes = {
         PropTypes.number,
     ]),
     children: PropTypes.node.isRequired,
+    className: PropTypes.string,
 };
 
 export default CustomP;

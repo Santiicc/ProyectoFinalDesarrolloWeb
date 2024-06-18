@@ -1,18 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const CustomH1 = ({ fontFamily, fontSize, fontWeight, children }) => {
+const CustomH1 = ({ fontFamily, fontSize, fontWeight, children, className }) => {
     const style = {
-        color: '#FFF',
         textAlign: 'center',
         fontFamily: fontFamily || 'Exo',
-        fontSize: fontSize || '20px',
+        fontSize: fontSize || '24px',
         fontStyle: 'normal',
         fontWeight: fontWeight || 700,
         lineHeight: 'normal',
     };
 
-    return <h1 style={style}>{children}</h1>;
+    return <h1 style={style} className={className}>{children}</h1>;
 };
 
 CustomH1.propTypes = {
@@ -23,6 +22,7 @@ CustomH1.propTypes = {
         PropTypes.number,
     ]),
     children: PropTypes.node.isRequired,
+    className: PropTypes.string,
 };
 
 export default CustomH1;

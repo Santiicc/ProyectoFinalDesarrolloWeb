@@ -1,4 +1,3 @@
-// Importaciones de React y estilos
 import React, { useState, useEffect } from "react";
 import CustomH1 from "../Components/CustomH1";
 import CustomP from "../Components/CustomP";
@@ -11,8 +10,8 @@ import {
   IconTwitter,
   IconGoogle,
 } from "../Utils/Icons";
-import classes from "../Pages/LoginPage.module.css";
-
+//import classes from "../Pages/LoginPageLight.module.css";  // Importa tus estilos aquí
+import classes from "../Pages/LoginPage.module.css";  // Importa tus estilos aquí
 const LoginPage = () => {
   const [usuario, setUsuario] = useState("");
   const [contraseña, setContraseña] = useState("");
@@ -24,14 +23,11 @@ const LoginPage = () => {
   const [passwordError, setPasswordError] = useState("");
 
   useEffect(() => {
-    const usuariosGuardados =
-      JSON.parse(localStorage.getItem("usuarios")) || [];
+    const usuariosGuardados = JSON.parse(localStorage.getItem("usuarios")) || [];
     setUsuarios(usuariosGuardados);
   }, []);
 
-  const validateEmail = (email) => {
-    return email.includes("@");
-  };
+  const validateEmail = (email) => email.includes("@");
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -40,23 +36,23 @@ const LoginPage = () => {
 
     if (!validateEmail(usuario)) {
       setEmailError("Invalid email");
+      return;
     }
 
     if (!contraseña) {
       setPasswordError("Invalid email or password");
       setContraseñaVisible(true);
+      return;
     }
 
-    if (validateEmail(usuario) && contraseña) {
-      const nuevoUsuario = { usuario, contraseña };
-      const usuariosActualizados = [...usuarios, nuevoUsuario];
-      setUsuarios(usuariosActualizados);
-      localStorage.setItem("usuarios", JSON.stringify(usuariosActualizados));
-      alert("Usuario registrado con éxito");
-      setUsuario("");
-      setContraseña("");
-      setIsLogin(true);
-    }
+    const nuevoUsuario = { usuario, contraseña };
+    const usuariosActualizados = [...usuarios, nuevoUsuario];
+    setUsuarios(usuariosActualizados);
+    localStorage.setItem("usuarios", JSON.stringify(usuariosActualizados));
+    alert("Usuario registrado con éxito");
+    setUsuario("");
+    setContraseña("");
+    setIsLogin(true);
   };
 
   const handleLogin = (e) => {
@@ -66,39 +62,38 @@ const LoginPage = () => {
 
     if (!validateEmail(usuario)) {
       setEmailError("Invalid email");
+      return;
     }
 
     if (!contraseña) {
       setPasswordError("Invalid email or password");
       setContraseñaVisible(true);
+      return;
     }
 
-    if (validateEmail(usuario) && contraseña) {
-      const usuarioEncontrado = usuarios.find(
-        (u) => u.usuario === usuario && u.contraseña === contraseña
-      );
-      if (usuarioEncontrado) {
-        alert("Login exitoso");
-      } else {
-        setPasswordError("Invalid email or password");
-        setContraseñaVisible(true);
-      }
+    const usuarioEncontrado = usuarios.find(
+      (u) => u.usuario === usuario && u.contraseña === contraseña
+    );
+    if (usuarioEncontrado) {
+      alert("Login exitoso");
+    } else {
+      setPasswordError("Invalid email or password");
+      setContraseñaVisible(true);
     }
+
     setUsuario("");
     setContraseña("");
   };
 
-  const handleRememberMe = (e) => {
-    setRememberMe(e.target.checked);
-  };
+  const handleRememberMe = (e) => setRememberMe(e.target.checked);
 
   return (
     <div className={classes.container}>
       <div className="conteiner-login">
-        <CustomH1 fontFamily="Exo" fontSize="20px" fontWeight="700">
+        <CustomH1 fontFamily="Exo" fontSize="20px" fontWeight="700" className={classes.textModeDos}>
           Welcome! Log in or register
         </CustomH1>
-        <CustomP fontFamily="Exo" fontSize="16px" fontWeight="400">
+        <CustomP fontFamily="Exo" fontSize="16px" fontWeight="400" className={classes.textModeDos}>
           Log in to find the games you're looking for!
         </CustomP>
         <form onSubmit={isLogin ? handleLogin : handleRegister}>
@@ -121,7 +116,7 @@ const LoginPage = () => {
                 value={contraseña}
                 onChange={(e) => setContraseña(e.target.value)}
                 placeholder="Password"
-                className={`${classes.inputField}`}
+                className={classes.inputField}
               />
               <button
                 type="button"
@@ -138,11 +133,13 @@ const LoginPage = () => {
               checked={rememberMe}
               onChange={handleRememberMe}
               label="Remember me"
+              className={classes.textModeDos}
             />
             <CustomP
               fontFamily="Open Sans"
               fontSize="14px"
               fontWeight="400"
+              
             >
               <a
                 href="#"
@@ -166,7 +163,7 @@ const LoginPage = () => {
         </form>
         <button className={classes.switchButton} onClick={() => setIsLogin(!isLogin)}>
           {isLogin ? (
-            <CustomP fontFamily="Open Sans" fontSize="14px" fontWeight="400">
+            <CustomP fontFamily="Open Sans" fontSize="14px" fontWeight="400" className={classes.textModeDos}>
               Not registered yet?{" "}
               <span style={{ color: "#5FE19B" }}>Register Now</span>
             </CustomP>
@@ -183,7 +180,8 @@ const LoginPage = () => {
             fontFamily="Open Sans"
             fontSize="14px"
             fontWeight="400"
-            className={classes.or}
+            className={classes.textModeDos}
+            
           >
             or
           </CustomP>
@@ -198,6 +196,7 @@ const LoginPage = () => {
               fontFamily="Exo"
               fontWeight="700"
               fontSize="18px"
+              className={classes.textMode}
             >
               Login with Facebook
             </CustomP>
@@ -210,6 +209,7 @@ const LoginPage = () => {
               fontFamily="Exo"
               fontWeight="700"
               fontSize="18px"
+              className={classes.textMode}
             >
               Login with Twitter
             </CustomP>
@@ -222,6 +222,7 @@ const LoginPage = () => {
               fontFamily="Exo"
               fontWeight="700"
               fontSize="18px"
+              className={classes.textMode}
             >
               Login with Google
             </CustomP>
