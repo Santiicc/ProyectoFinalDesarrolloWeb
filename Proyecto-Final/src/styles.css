@@ -1,25 +1,20 @@
-body {
-   
-    
-    background-size: cover; 
-    background-position: center; 
-    background-repeat: no-repeat;
-    
-   
-    font-family: Arial, sans-serif;
-    color: #fff;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    height: 100vh;
+.bodyDark {
     margin: 0;
+    display: flex;
+    place-items: center;
+    min-width: 320px;
+    min-height: 100vh;
+    background-image: url('Img/fondoOscuro.png');}
+  
+.bodyLight {
+    margin: 0;
+    display: flex;
+    place-items: center;
+    min-width: 320px;
+    min-height: 100vh;
+    background-image: url('Img/fondoClaro.png');
 }
-
-
-h1 {
-    margin-bottom: 20px;
-    font-size: 1.2rem;
-}
+  
 
 
 

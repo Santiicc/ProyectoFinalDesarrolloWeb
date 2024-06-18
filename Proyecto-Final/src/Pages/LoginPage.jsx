@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import CustomH1 from "../Components/CustomH1";
 import CustomP from "../Components/CustomP";
 import CustomCheckbox from "../Components/Checkbox";
+import Switch from "../Utils/Switch"; // Importar el componente Switch
 import {
   IconEye,
   IconRedEye,
@@ -10,8 +11,10 @@ import {
   IconTwitter,
   IconGoogle,
 } from "../Utils/Icons";
-//import classes from "../Pages/LoginPageLight.module.css";  // Importa tus estilos aquí
-import classes from "../Pages/LoginPage.module.css";  // Importa tus estilos aquí
+import classesDark from "../Styles/LoginPageDark.module.css";
+import classesLight from "../Styles/LoginPageLight.module.css";
+import "../styles.css";
+
 const LoginPage = () => {
   const [usuario, setUsuario] = useState("");
   const [contraseña, setContraseña] = useState("");
@@ -21,12 +24,18 @@ const LoginPage = () => {
   const [contraseñaVisible, setContraseñaVisible] = useState(false);
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
+  const [mode, setMode] = useState("dark"); 
 
   useEffect(() => {
-    const usuariosGuardados = JSON.parse(localStorage.getItem("usuarios")) || [];
+    const usuariosGuardados =
+      JSON.parse(localStorage.getItem("usuarios")) || [];
     setUsuarios(usuariosGuardados);
   }, []);
 
+  useEffect(() => {
+    document.body.className = mode === "dark" ? "bodyDark" : "bodyLight";
+  }, [mode]);
+  
   const validateEmail = (email) => email.includes("@");
 
   const handleRegister = (e) => {
@@ -87,71 +96,98 @@ const LoginPage = () => {
 
   const handleRememberMe = (e) => setRememberMe(e.target.checked);
 
+  const toggleMode = () => {
+    setMode((prevMode) => (prevMode === "dark" ? "light" : "dark"));
+  };
+
+  const currentClasses = mode === "dark" ? classesDark : classesLight;
+
   return (
-    <div className={classes.container}>
+    <div className={currentClasses.container}>
+      <Switch color="#6e40c9" onChangeHandler={toggleMode} />
       <div className="conteiner-login">
-        <CustomH1 fontFamily="Exo" fontSize="20px" fontWeight="700" className={classes.textModeDos}>
+        <CustomH1
+          fontFamily="Exo"
+          fontSize="20px"
+          fontWeight="700"
+          className={currentClasses.textModeDos}
+        >
           Welcome! Log in or register
         </CustomH1>
-        <CustomP fontFamily="Exo" fontSize="16px" fontWeight="400" className={classes.textModeDos}>
+        <CustomP
+          fontFamily="Exo"
+          fontSize="16px"
+          fontWeight="400"
+          className={currentClasses.textModeDos}
+        >
           Log in to find the games you're looking for!
         </CustomP>
         <form onSubmit={isLogin ? handleLogin : handleRegister}>
-          <div className={`${classes.inputBlock} ${emailError || passwordError ? classes.error : ''}`}>
+          <div
+            className={`${currentClasses.inputBlock} ${
+              emailError || passwordError ? currentClasses.error : ""
+            }`}
+          >
             <input
               type="text"
               name="usuario"
               value={usuario}
               onChange={(e) => setUsuario(e.target.value)}
               placeholder="Email"
-              className={classes.inputField}
+              className={currentClasses.inputField}
             />
-            {emailError && <p className={classes.errorMessage}>{emailError}</p>}
+            {emailError && (
+              <p className={currentClasses.errorMessage}>{emailError}</p>
+            )}
           </div>
-          <div className={`${classes.inputBlock} ${passwordError ? classes.error : ''}`}>
-            <div className={classes.passwordContainer}>
+          <div
+            className={`${currentClasses.inputBlock} ${
+              passwordError ? currentClasses.error : ""
+            }`}
+          >
+            <div className={currentClasses.passwordContainer}>
               <input
                 type={contraseñaVisible ? "text" : "password"}
                 name="contraseña"
                 value={contraseña}
                 onChange={(e) => setContraseña(e.target.value)}
                 placeholder="Password"
-                className={classes.inputField}
+                className={currentClasses.inputField}
               />
               <button
                 type="button"
-                className={classes.eyeButton}
+                className={currentClasses.eyeButton}
                 onClick={() => setContraseñaVisible(!contraseñaVisible)}
               >
-                {passwordError ? <IconRedEye /> : contraseñaVisible ? <IconEye /> : <IconEyeOff />}
+                {passwordError ? (
+                  <IconRedEye />
+                ) : contraseñaVisible ? (
+                  <IconEye />
+                ) : (
+                  <IconEyeOff />
+                )}
               </button>
             </div>
-            {passwordError && <p className={classes.errorMessage}>{passwordError}</p>}
+            {passwordError && (
+              <p className={currentClasses.errorMessage}>{passwordError}</p>
+            )}
           </div>
-          <div className={classes.checkboxContainer}>
+          <div className={currentClasses.checkboxContainer}>
             <CustomCheckbox
               checked={rememberMe}
               onChange={handleRememberMe}
               label="Remember me"
-              className={classes.textModeDos}
+              className={currentClasses.textModeDos}
             />
-            <CustomP
-              fontFamily="Open Sans"
-              fontSize="14px"
-              fontWeight="400"
-              
-            >
-              <a
-                href="#"
-                style={{ color: "#5FE19B", textDecoration: "none" }}
-              >
+            <CustomP fontFamily="Open Sans" fontSize="14px" fontWeight="400">
+              <a href="#" style={{ color: "#5FE19B", textDecoration: "none" }}>
                 Forgot password?
               </a>
             </CustomP>
           </div>
           <button
             type="submit"
-            className={classes.customButton} 
+            className={currentClasses.customButton}
             style={{
               fontFamily: "Exo",
               fontSize: "18px",
@@ -161,9 +197,17 @@ const LoginPage = () => {
             {isLogin ? "Log in" : "Register"}
           </button>
         </form>
-        <button className={classes.switchButton} onClick={() => setIsLogin(!isLogin)}>
+        <button
+          className={currentClasses.switchButton}
+          onClick={() => setIsLogin(!isLogin)}
+        >
           {isLogin ? (
-            <CustomP fontFamily="Open Sans" fontSize="14px" fontWeight="400" className={classes.textModeDos}>
+            <CustomP
+              fontFamily="Open Sans"
+              fontSize="14px"
+              fontWeight="400"
+              className={currentClasses.textModeDos}
+            >
               Not registered yet?{" "}
               <span style={{ color: "#5FE19B" }}>Register Now</span>
             </CustomP>
@@ -173,56 +217,55 @@ const LoginPage = () => {
             </CustomP>
           )}
         </button>
-        <div className={classes.lineContainer}>
-          <div className={classes.line}></div>
+        <div className={currentClasses.lineContainer}>
+          <div className={currentClasses.line}></div>
           <CustomP
             margin="20px 0;"
             fontFamily="Open Sans"
             fontSize="14px"
             fontWeight="400"
-            className={classes.textModeDos}
-            
+            className={currentClasses.textModeDos}
           >
             or
           </CustomP>
-          <div className={classes.line}></div>
+          <div className={currentClasses.line}></div>
         </div>
-        <div className={classes.socialButtons}>
-          <button className={classes.facebook}>
-            <div className={classes.icon}>
+        <div className={currentClasses.socialButtons}>
+          <button className={currentClasses.facebook}>
+            <div className={currentClasses.icon}>
               <IconFacebook />
             </div>
             <CustomP
               fontFamily="Exo"
               fontWeight="700"
               fontSize="18px"
-              className={classes.textMode}
+              className={currentClasses.textMode}
             >
               Login with Facebook
             </CustomP>
           </button>
-          <button className={classes.twitter}>
-            <div className={classes.icon}>
+          <button className={currentClasses.twitter}>
+            <div className={currentClasses.icon}>
               <IconTwitter />
             </div>
             <CustomP
               fontFamily="Exo"
               fontWeight="700"
               fontSize="18px"
-              className={classes.textMode}
+              className={currentClasses.textMode}
             >
               Login with Twitter
             </CustomP>
           </button>
-          <button className={classes.google}>
-            <div className={classes.icon}>
+          <button className={currentClasses.google}>
+            <div className={currentClasses.icon}>
               <IconGoogle />
             </div>
             <CustomP
               fontFamily="Exo"
               fontWeight="700"
               fontSize="18px"
-              className={classes.textMode}
+              className={currentClasses.textMode}
             >
               Login with Google
             </CustomP>

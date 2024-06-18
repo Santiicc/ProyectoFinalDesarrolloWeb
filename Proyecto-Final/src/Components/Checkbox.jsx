@@ -1,6 +1,6 @@
 import React from "react";
 import CustomP from "./CustomP";
-import classes from "../Pages/LoginPage.module.css";
+import classes from "../Styles/LoginPageDark.module.css";
 
 const CustomCheckbox = ({ checked, onChange, label, className }) => {
   return (
