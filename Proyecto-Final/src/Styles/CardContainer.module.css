@@ -1,0 +1,22 @@
+.Container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; 
+  justify-content: flex-start;
+  margin-top: 70px;
+  margin-left: 290px;
+}
+
+.DivGral {
+  width: 100%;
+  min-height: 100vh; 
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 1024px) {
+  .Container {
+    justify-content: center;
+    margin-left: 0;
+  }
+}

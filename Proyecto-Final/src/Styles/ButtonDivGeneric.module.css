@@ -1,0 +1,21 @@
+.divGral {
+    width: 228px;
+    height: 47px;
+    flex-shrink: 0;
+    border-radius: 6px;
+    border: 2px solid #36B972;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Text {
+    padding: 0;
+    margin: 0;
+    font-family: Exo;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-align: center;
+}

@@ -1,0 +1,43 @@
+.CardDiv {
+    width: 697px;
+    height: 516px;
+    flex-shrink: 0;
+    border-radius: 12px;
+    background: #fff;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  
+.Namegame {
+    color: #515151;
+    font-family: 'Exo', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    margin: 0;
+    line-height: normal;
+  }
+
+.Info2 {
+    color: #515151;
+    font-family: 'Exo', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    margin: 0;
+    flex-direction: column;
+    text-align: justify;
+  }
+  
+.DivDescription {
+    display: flex;
+    flex-direction: column;
+    color: #515151;
+    font-family: Exo;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-align: start;
+  }
+
+  

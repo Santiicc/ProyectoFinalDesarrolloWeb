@@ -1,54 +1,55 @@
-import React from "react";
-import classes from "../Styles/Card.module.css"
+import React, { useState } from "react";
+import classes from '../Styles/Card.module.css';
+import classes2 from '../Styles/CardWhite.module.css';
 import Platform from "../Utils/Platform";
-import classes2 from "../Styles/Icons.module.css"
+import { IconHeart } from "../Utils/Icons";
 
 
-const Card = ({photogame,namegame , date , genres , ranking , platforms }) => {
+const Card = ({ mode, photogame, namegame, date, genres, ranking, platforms }) => {
+  const [liked, setLiked] = useState(false);
+
+  const HeartClick = () => {
+    setLiked(!liked);
+  };
+
+  const currentClasses = mode.includes('dark') ? classes : classes2;
+
   return (
-    <div className={classes.CardDiv}>
-
-    <img src={photogame} className={classes.Img}/>
+    <div className={currentClasses.CardDiv}>
+      <div className={classes.DivImg} style={{ backgroundImage: `url(${photogame})` }}>
+        <button className={classes.HeartButton} onClick={HeartClick}>
+          <IconHeart fill={liked ? 'white' : 'none'} />
+        </button>
+      </div>
       
       <div className={classes.CardDiv2}>
-
-        <div className="PrimerDiv">
-          <div className="NameGame">
-            <h2 className={classes.TitleGame}>{namegame}</h2>
-          </div>
-          <div className="Ranking">
-            <span>{ranking}</span>
-          </div>
+        <div className={classes.PrimerDiv}>
+          <h2 className={currentClasses.Namegame}>{namegame}</h2>
+          <span className={classes.Ranking}>{ranking}</span>
         </div>
 
-        <div className="DivPlatforms">
-          <div className="ReleaseDate">
-            <h6 className={classes.Info}>Release Date :</h6>
-          </div>
-          <div className="ReleaseDate2">
-            <h6>{date}</h6>
-          </div>
-          <div className="Platforms">
-              {platforms.map((p) => {
-              return (
-                <Platform platform={p}></Platform>
-              );
-            })}
-          </div>
-        </div>
-
-        <div className="Genres">
-          <div className="GenresSubt">
-            <h6 className={classes.Info}>Genres :</h6>
+        <div className={classes.DivPyG}>
+          <div className={classes.RyG}>
+            <h6 className={classes.Info}>Release Date:</h6>
+            <h6 className={classes.Info}>Genres:</h6>
           </div>
             
-          <div className="GenresWhite">
-            <h6>{genres}</h6>
+          <div className={classes.GyP}>
+            <div className={classes.GyPintern}>
+              <h6 className={currentClasses.Info2}>{date}</h6>
+              <div className={classes.Platforms}>
+                {platforms.map((p, index) => (
+                  <Platform key={index} platform={p} mode={mode} />
+                ))}
+              </div>
+            </div>
+            
+            <h6 className={currentClasses.Info2}>
+              {genres.join(", ")}
+            </h6>
           </div>
         </div>
-        
       </div>
-
     </div>
   );
 };

@@ -1,28 +1,36 @@
+
 .CardDiv {
-  width: 363px;
-  height: 314px;
+  width: 697px;
+  height: 516px;
   flex-shrink: 0;
   border-radius: 12px;
   background: #303030;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  position: relative;
-  box-shadow: 0 4px 8px rgba(250, 246, 246, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease; 
 }
 
-.CardDiv:hover {
-  transform: scale(1.05); /* Zoom */
-  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.4);
+
+.DivImg {
+  display: flex;
+  width: 697px;
+  height: 315px;
+  flex-shrink: 0;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  margin-bottom: 0;
+  background-size: cover;
+  background-position: center;
+  position: relative; 
+  align-items: center;
+  justify-content: center;
 }
 
 .CardDiv2 {
   padding: 16px;
-  flex-grow: 1; 
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; 
   box-sizing: border-box;
 }
 
@@ -30,26 +38,29 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 16px;
+  margin-bottom: 13px;
 }
 
-.DivPyG{
+
+.DivPyG {
   display: flex;
-} 
+  margin-bottom: 14px;
+}
 
 .Namegame {
   color: #FFF;
   font-family: 'Exo', sans-serif;
-  font-size: 24px;
+  font-size: 32px;
   font-weight: 700;
   margin: 0;
+  line-height: normal;
 }
 
 .Ranking {
   color: #36B972;
   text-align: right;
   font-family: 'Exo', sans-serif;
-  font-size: 18px;
+  font-size: 24px;
   font-weight: 700;
 }
 
@@ -71,35 +82,52 @@
   margin: 0;
   flex-direction: column;
   text-align: justify;
- 
 }
 
 .Platforms {
   display: flex;
-  gap: 12px;
+  gap: 16px;
   margin-left: auto;
 }
 
-.GyP{
+.Rd {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 66%;
-  gap: 4px;
+  flex-direction: row;
+  gap: 10px;
+  margin-right: 15px;
 }
 
-.GyPintern{
+.GyP {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 10px;
+  width: 73%;
+}
+
+.GyPintern {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
 }
 
-.RyG{
+.RyG {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   margin-right: 25px;
-  gap: 4px;
+}
+
+.DivDescription {
+  display: flex;
+  flex-direction: column;
+  color: #FFF;
+  font-family: Exo;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-align: start;
 }
 
 .HeartButton {
@@ -117,19 +145,4 @@
 
 .HeartButton:focus {
   outline: none;
-}
-
-.DivImg {
-  display: flex;
-  width: 363px;
-  height: 179px;
-  flex-shrink: 0;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
-  margin-bottom: 0;
-  background-size: cover;
-  background-position: center;
-  position: relative; 
-  align-items: center;
-  justify-content: center;
 }
