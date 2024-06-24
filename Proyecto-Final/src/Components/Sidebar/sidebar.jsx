@@ -60,7 +60,7 @@ const Sidebar = () => {
               <ul className={styles.navList2}>
                 <li className={styles.navItem2}>
                   <div className={styles.iconTextContainer}>
-                    <img src={lupita} className={styles.icon} alt="best" />
+                    <img src={lupita} className={styles.icon} alt="lupita" />
                     <span>Coming soon</span>
                   </div>
                 </li>

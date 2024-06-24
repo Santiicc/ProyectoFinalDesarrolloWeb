@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import "./App.css";
 import Sidebar from "./Components/Sidebar/sidebar";
 import Home from "./Pages/Home";
@@ -35,15 +34,3 @@ export default function App() {
       </div>
   );
 }
-=======
-import React from 'react';
-import './App.css'
-
-  return (
-    <div></div>
-  )
-
-
-
-export default App
->>>>>>> 585639556250b4fad09dbbf1bdcc8bf74d7c6a79
