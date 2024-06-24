@@ -1,29 +1,36 @@
-import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import Profile from Profile;
-import Home from './Pages/Home';
-import Reviews from './Pages/Reviews';
-import NewReleases from './Pages/NewReleases';
-import Popular from './Pages/Popular';
-import './App.css'
+import "./App.css";
+import Sidebar from "./Components/Sidebar/sidebar";
+import Home from "./Pages/Home";
+import Reviews from "./Pages/Reviews";
+import NewReleases from "./Pages/NewReleases";
+import Popular from "./Pages/Popular";
+import { useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-const App = () => {
+export default function App() {
+  const [themeSettings, setThemeSettings] = useState({
+    mode: "light",
+    switchMode: () => {
+      setThemeSettings((prevState) => ({
+        ...prevState,
+        mode: prevState.mode === "light" ? "dark" : "light",
+      }));
+    },
+  });
+
   return (
-    <Router>
-      <div className="app">
-        <Profile/>
-        <div>
-          <Switch>
-            <Route path="/" exact component={Home}/>
-            <Route path="/reviews" exact component={Reviews}/>
-            <Route path="/new-releases" exact component={NewReleases}/>
-            <Route path="/popular" exact component={Popular}/>
-          </Switch>
-        </div>
+      <div className={"App-" + themeSettings.mode}>
+        <Router>
+          <Sidebar />
+          <main>
+            <Routes>
+              <Route pathname="/" element={<Home />} />
+              <Route pathname="/reviews" element={<Reviews />} />
+              <Route pathname="/newreleases" element={<NewReleases />} />
+              <Route pathname="/popular" element={<Popular />} />
+            </Routes>
+          </main>
+        </Router>
       </div>
-    </Router> 
-  )
+  );
 }
-
-
-export default App

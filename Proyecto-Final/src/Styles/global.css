@@ -1,0 +1,23 @@
+:root {
+    --primary-ligth-green: #5FE19B;
+    --primary-super-green: #4CC986;
+    --secondary-cool-iris: #5f81fb;
+    --secondary-lapis-lazuli : #1245c9;
+    --secondary-deep-blue: #06207b;
+    --secondary-coral-reef:#fb5f5f;
+    --secondary-hey-honey: #ffdc22;
+    --neutrals-black:#151515;
+    --neutrals-dark-charcoal: #333;
+    --neutrals-grey1:#303030;
+    --neutrals-grey2:#515151;
+    --neutrals-grey3:#939393;
+    --neutrals-white:#ffffff;
+    --profile-back:#2A2A2A;
+    --profile-letter:#515151;
+    --button-black-light-mode:#939393;
+
+    /*
+        Los neutrals de los grises van aumentando dependiendo cuando es mas claro.
+    */
+
+}

@@ -1,0 +1,33 @@
+.sidebar {
+  width: 250px;
+  height: calc(100vh - 100px);
+  padding: 20px;
+  background-color: #333; /* Fondo oscuro para el modo oscuro */
+}
+
+.top {
+  color: #fff; /* Texto blanco para el modo oscuro */
+  font-family: 'Exo', sans-serif;
+  font-size: 48px;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.navList {
+  list-style: none;
+  padding: 0;
+}
+
+.navItem {
+  margin: 15px 0;
+}
+
+.navLink {
+  text-decoration: none;
+  color: #fff; /* Texto blanco para los enlaces en modo oscuro */
+  font-size: 18px;
+}
+
+.navLink:hover {
+  color: #007bff;
+}
