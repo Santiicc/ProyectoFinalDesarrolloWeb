@@ -2,15 +2,19 @@ import React, { useState, useEffect } from "react";
 import CustomH1 from "../Components/CustomH1";
 import CustomP from "../Components/CustomP";
 import CustomCheckbox from "../Components/Checkbox";
-import Switch from "../Utils/Switch"; // Importar el componente Switch
+import Switch from "../Utils/Switch"; 
 import {
   IconEye,
   IconRedEye,
   IconEyeOff,
-  IconFacebook,
-  IconTwitter,
-  IconGoogle,
+  IconFacebookDark,
+  IconGoogleDark,
+  IconTwitterDark,
+  IconFacebookLight,
+  IconGoogleLight,
+  IconTwitterLight,
 } from "../Utils/Icons";
+
 import classesDark from "../Styles/LoginPageDark.module.css";
 import classesLight from "../Styles/LoginPageLight.module.css";
 import "../styles.css";
@@ -233,7 +237,7 @@ const LoginPage = () => {
         <div className={currentClasses.socialButtons}>
           <button className={currentClasses.facebook}>
             <div className={currentClasses.icon}>
-              <IconFacebook />
+            {mode === "dark" ? <IconFacebookDark /> : <IconFacebookLight />}
             </div>
             <CustomP
               fontFamily="Exo"
@@ -246,7 +250,7 @@ const LoginPage = () => {
           </button>
           <button className={currentClasses.twitter}>
             <div className={currentClasses.icon}>
-              <IconTwitter />
+            {mode === "dark" ? <IconTwitterDark /> : <IconTwitterLight />}
             </div>
             <CustomP
               fontFamily="Exo"
@@ -259,7 +263,7 @@ const LoginPage = () => {
           </button>
           <button className={currentClasses.google}>
             <div className={currentClasses.icon}>
-              <IconGoogle />
+            {mode === "dark" ? <IconGoogleDark /> : <IconGoogleLight />}
             </div>
             <CustomP
               fontFamily="Exo"
