@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import classes from '../Styles/CardContainer.module.css'; 
 import Card from "../Components/Card";
 import Switch from "../Utils/Switch";
+import SearchBar from '../Components/SearchBar';
+import Text_Subtext from './Text&Subtext';
 
 const CardContainer = ({ data }) => {
   const [DarkMode, setDarkMode] = useState('light');
@@ -17,19 +19,30 @@ const CardContainer = ({ data }) => {
     }
   };
 
+  const transformPlatforms = (parentPlatforms) => {
+    return parentPlatforms.map(platformObj => platformObj.platform.name);
+  };
+
   return (
     <div className={classes.DivGral} style={{ backgroundColor: BackgroundColor }}>
+      <div className={classes.SearchBar}>
+      <SearchBar></SearchBar>
+      </div>
+      <div className={classes.Switch}>
+      <Text_Subtext mode={DarkMode} Text={"New and Trending"} Subtext={"Based on player counts and release date"}></Text_Subtext>
       <Switch color={'green'} onChangeHandler={switchDarkMode} />
+      </div>
+     
       <div className={classes.Container}>
         {data.map((game, index) => (
           <Card
             key={index}
-            photogame={game.photogame}
-            namegame={game.namegame}
-            date={game.date}
-            genres={game.genres}
-            ranking={game.ranking}
-            platforms={game.platforms}
+            photogame={game.background_image}
+            namegame={game.name}
+            date={game.released}
+            genres={game.genres.map(genre => genre.name)} 
+            ranking={game.rating}
+            platforms={transformPlatforms(game.parent_platforms)}
             mode={DarkMode}
           />
         ))}

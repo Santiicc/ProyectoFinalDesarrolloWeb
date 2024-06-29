@@ -1,0 +1,128 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(180deg, #5FE19B 0%, #36B972 50%, #0EA152 100%);
+    filter: drop-shadow(1px -3px 36px rgba(0, 0, 0, 0.50));
+    color: white;
+    padding: 10px 20px;
+    width: 100%;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .logoAndTitle {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    width: 160px;
+    height: auto;
+    flex-shrink: 0;
+  }
+  
+  .searchBarContainer {
+    position: relative;
+    width: 30%;
+  }
+  
+  .searchBar {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  }
+  
+  .searchIcon {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    margin-left: 5px;
+  }
+  
+  .searchInput {
+    flex: 1;
+    padding: 8px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: white;
+    color: black;
+  }
+  
+  .searchInput::placeholder {
+    color: #999;
+  }
+  
+  .clearButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 18px;
+    color: #666;
+  }
+  
+  .clearButtonImg {
+    width: 18px;
+  }
+  
+  .results {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 5px;
+    z-index: 999;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  ul li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    color: black;
+  }
+  
+  ul li:last-child {
+    border-bottom: none;
+  }
+  
+  .userProfile {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+  }
+  
+  .userProfile img {
+    border-radius: 50%;
+    margin-left: 10px;
+    width: 40px;
+    height: 40px;
+  }
+  
+  .profilePic {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-left: 10px;
+  }
+  
+  .userProfile span {
+    margin-right: 10px;
+    cursor: pointer;
+  }

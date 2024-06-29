@@ -4,7 +4,6 @@ import classes2 from '../Styles/CardWhite.module.css';
 import Platform from "../Utils/Platform";
 import { IconHeart } from "../Utils/Icons";
 
-
 const Card = ({ mode, photogame, namegame, date, genres, ranking, platforms }) => {
   const [liked, setLiked] = useState(false);
 
@@ -13,6 +12,16 @@ const Card = ({ mode, photogame, namegame, date, genres, ranking, platforms }) =
   };
 
   const currentClasses = mode.includes('dark') ? classes : classes2;
+
+  const truncateText = (text, maxLength) => {
+    if (text.length > maxLength) {
+      return text.substring(0, maxLength) + '...';
+    }
+    return text;
+  };
+
+  const genreText = genres.join(", ");
+  const truncatedGenreText = truncateText(genreText, 30);
 
   return (
     <div className={currentClasses.CardDiv}>
@@ -24,7 +33,7 @@ const Card = ({ mode, photogame, namegame, date, genres, ranking, platforms }) =
       
       <div className={classes.CardDiv2}>
         <div className={classes.PrimerDiv}>
-          <h2 className={currentClasses.Namegame}>{namegame}</h2>
+          <h2 className={currentClasses.Namegame}>{truncateText(namegame, 20)}</h2>
           <span className={classes.Ranking}>{ranking}</span>
         </div>
 
@@ -45,7 +54,7 @@ const Card = ({ mode, photogame, namegame, date, genres, ranking, platforms }) =
             </div>
             
             <h6 className={currentClasses.Info2}>
-              {genres.join(", ")}
+              {truncatedGenreText}
             </h6>
           </div>
         </div>

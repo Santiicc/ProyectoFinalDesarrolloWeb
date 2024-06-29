@@ -11,6 +11,9 @@ import GameTrailer from './Utils/DivTrailer'
 import PurchaseButton from './Utils/ButtonPurchase'
 import { useEffect } from 'react'
 import { getGames } from './Api/api'
+import Text_Subtext from './Utils/Text&Subtext'
+import GiantCard from './Components/GiantCard'
+import GiantCardDescription from './Components/GiantCardDescription'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -161,7 +164,23 @@ function App() {
  
   /*----------------CARDCONTAINER--------------------*/
   
-    <CardContainer data={exampleData}></CardContainer>
+    /*<CardContainer data={games}></CardContainer>*/
+
+    /*
+    <GiantCard photogame={'https://th.bing.com/th/id/R.f73d8efb44084da88756da6779eed573?rik=qqRvg4muwgW2sw&pid=ImgRaw&r=0'} mode={'dark'}
+    namegame={'BioMutantaaa'} date={'21/4/2022'} genres={['Rol','Rpg','Competitive']} developer={'Carlos'} platforms={['PlayStation',"Xbox","Pc"]} description={'123 description goes over here: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 123333 in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur claudiogay consequat. Duis aute irure dolor in reprehenderit 123 voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur'}
+    >
+
+    </GiantCard>*/
+
+    <GiantCardDescription mode={"light"} namegame={'BioMutantaaa'} platforms={['PlayStation',"Xbox","Pc"]}
+    description={'123 description goes over here: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 123333 in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur claudiogay consequat. Duis aute irure dolor in reprehenderit 123 voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteurion goes over here: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 123333 in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur claudiogay consequat. Duis aute irure dolor in reprehenderit 123 voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteurion goes over here: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 123333 in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur claudiogay consequat. Duis aute irure dolor in reprehenderit 123 voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteurion goes over here: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 123333 in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur claudiogay consequat. Duis aute irure dolor in reprehenderit 123 voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteurion goes over here: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 123333 in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur claudiogay consequat. Duis aute irure dolor in reprehenderit 123 voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteurion goes over here: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 123333 in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur claudiogay consequat. Duis aute irure dolor in reprehenderit 123 voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur'  
+    }
+    
+    
+    >
+
+    </GiantCardDescription>
 
     /*console.log(games)*/
 
@@ -173,6 +192,8 @@ function App() {
   /*<WishListButton></WishListButton>*/
 
   /*<PurchaseButton></PurchaseButton>*/
+
+  /*<Text_Subtext mode={"dark"} Text={"New and Trending"} Subtext={"Based on player counts and release date"}></Text_Subtext>*/
    )
 }
 

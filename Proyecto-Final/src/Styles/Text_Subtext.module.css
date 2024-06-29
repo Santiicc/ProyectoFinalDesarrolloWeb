@@ -1,0 +1,32 @@
+/* Asegúrate de no tener márgenes */
+.Div {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 2px; /* Espacio de 2 píxeles entre los elementos */
+    margin: 0; /* Eliminar márgenes */
+    padding: 0; /* Eliminar padding si hay alguno */
+  }
+  
+  .Text {
+    width: 400px;
+    flex-shrink: 0;
+    font-family: Exo;
+    font-size: 38px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    margin: 0; /* Eliminar márgenes */
+    padding: 0; /* Eliminar padding si hay alguno */
+  }
+  
+  .SubText {
+    font-family: Exo;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0; /* Eliminar márgenes */
+    padding: 0; /* Eliminar padding si hay alguno */
+  }
+  
