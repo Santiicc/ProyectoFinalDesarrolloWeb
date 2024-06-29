@@ -70,6 +70,9 @@ const Sidebar = () => {
                     <span>Best Of The Year</span>
                   </div>
                 </li>
+                <li className={styles.navItem}>
+                  <Link to="/sidebar-mobile" className={styles.navLink}>Sidebar Mobile</Link>
+                </li>
               </ul>
             </li>
           </ul>
