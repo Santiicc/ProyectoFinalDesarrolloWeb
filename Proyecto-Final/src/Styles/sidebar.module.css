@@ -1,10 +1,9 @@
 .sidebar {
-  width: 250px;
-  height: calc(100vh - 100px);
-  padding: 20px;
+  width: 374px;
+  height: 15;
   display: flex;
   flex-direction: column;
-  transition: all 0.3s ease;
+  gap: 32px;
 }
 
 @media (max-width: 768px) {
@@ -13,125 +12,43 @@
   }
 }
 
-.topBox {
-  width: auto;
-  height: 94px;
-  flex-shrink: 0;
-  background: linear-gradient(180deg, #5fe19b 0%, #36b972 50%, #0ea152 100%);
-  filter: drop-shadow(1px -3px 36px rgba(0, 0, 0, 0.5));
-  display: flex;
-  align-items: center;
-  padding-left: 30px;
-}
-
-.topBox p {
-  margin: 0;
-  color: white;
-  font-size: 24px;
-}
-
-.top {
-  color: #515151;
-  font-family: "Exo", sans-serif;
-  font-size: 24px;
-  font-weight: 700;
-  margin-bottom: 20px;
-  margin-left: 30px;
-}
-
-.top2 {
-  color: #515151;
-  font-family: Exo;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 300;
-  line-height: normal;
-  margin-left: 30px;
-}
-
-.navList {
-  list-style: none;
-  padding: 0;
-}
-
-.navItem {
+.title {
+  color: #36B972;
   font-family: Exo;
   font-size: 20px;
-  font-style: normal;
   font-weight: 700;
-  line-height: normal;
-  margin-bottom: 20px;
+  margin-bottom: 14px;
+  gap: 14px;
 }
 
-.navLink {
-  text-decoration: none;
-  color: #333;
-  font-size: 18px;
-  display: flex;
-  align-items: center;
-  margin-left: 20px;
-  margin-bottom: 15px;
+.titles {
+  color: #515151;
+  font-family: Exo;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 14px;
+  gap: 14px;
 }
 
-.navList2 {
-  list-style: none;
-  padding: 0;
-}
-
-.navItem2 {
+.miniTitles {
   color: #515151;
   font-family: Exo;
   font-size: 18px;
-  font-style: normal;
   font-weight: 400;
-  line-height: normal;
-  margin-left: 20px;
-  margin-bottom: 15px;
-}
-
-.navLink2 {
-  text-decoration: none;
-  color: #333;
-  display: flex;
-  align-items: center;
+  gap: 8px;
 }
 
 .iconTextContainer {
   display: flex;
   align-items: center;
+  gap: 8px;
 }
 
 .icon {
+  width: 24px;
+  height: 23.999px;
+  flex-shrink: 0;
   margin-right: 10px;
   width: 20px;
   height: 20px;
-}
-
-@media (max-width: 768px) {
-  .sidebarFullScreen {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100vh;
-    background-color: white;
-    padding: 20px;
-  }
-
-  .sidebarFullScreen .topBox {
-    padding-left: 0;
-    justify-content: center;
-  }
-
-  .sidebarFullScreen .topBox p {
-    font-size: 28px;
-  }
-
-  .sidebarFullScreen .top, .sidebarFullScreen .top2 {
-    text-align: center;
-    margin-left: 0;
-  }
-
-  .sidebarFullScreen .navLink, .sidebarFullScreen .navLink2 {
-    justify-content: center;
-  }
 }
