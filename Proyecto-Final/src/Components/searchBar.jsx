@@ -7,29 +7,21 @@ import searchIcon from '../assets/Search.png';
 
 const SearchBar = () => {
   const [search, setSearch] = useState("");
-  const [games, setGames] = useState([
-    { id: 1, name: "Mario Party 1" },
-    { id: 2, name: "Mario Party 2" },
-    { id: 3, name: "Mario Party 3" },
-    { id: 4, name: "Wii Sports" },
-    { id: 5, name: "EAFC 24" },
-    { id: 6, name: "GTA V" },
-    { id: 7, name: "Minecraft" },
-    { id: 8, name: "LOL" },
-  ]);
-  const [filteredGames, setFilteredGames] = useState(games);
+  const [recentSearches, setRecentSearches] = useState([]);
+  const [filteredGames, setFilteredGames] = useState([]);
   const [isFocused, setIsFocused] = useState(false);
   const [showClearButton, setShowClearButton] = useState(false);
+  const [isMobileSearchOpen, setIsMobileSearchOpen] = useState(false);
 
   const inputRef = useRef(null);
 
   useEffect(() => {
-    const sortedGames = games.sort((a, b) => a.name.localeCompare(b.name));
+    const sortedGames = recentSearches.sort((a, b) => a.localeCompare(b));
     const filteredGames = sortedGames.filter((game) =>
-      game.name.toLowerCase().includes(search.toLowerCase())
+      game.toLowerCase().includes(search.toLowerCase())
     );
     setFilteredGames(filteredGames);
-  }, [games, search]);
+  }, [recentSearches, search]);
 
   const handleSearch = (e) => {
     const searchTerm = e.target.value;
@@ -62,8 +54,18 @@ const SearchBar = () => {
   };
 
   const handleSearchIconClick = () => {
-    setIsFocused(true);
-    inputRef.current.focus();
+    setIsMobileSearchOpen(!isMobileSearchOpen);
+    if (!isMobileSearchOpen) {
+      inputRef.current.focus();
+    }
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter' && search.trim() !== "") {
+      const updatedRecentSearches = [search, ...recentSearches].slice(0, 4);
+      setRecentSearches(updatedRecentSearches);
+      setSearch("");
+    }
   };
 
   return (
@@ -72,7 +74,7 @@ const SearchBar = () => {
         <div className={classes.logoAndTitle}>
           <img src={whiteLogo} alt="GAMEFINDER Logo" className={classes.logo} />
         </div>
-        <div className={classes.searchBarContainer} onFocus={handleFocus} onBlur={handleBlur}>
+        <div className={`${classes.searchBarContainer} ${isMobileSearchOpen ? classes.mobileSearchOpen : ''}`}>
           <div className={classes.searchBar}>
             <img
               src={searchIcon}
@@ -85,8 +87,9 @@ const SearchBar = () => {
               type="text"
               value={search}
               onChange={handleSearch}
+              onKeyPress={handleKeyPress}
               placeholder="Search game..."
-              className={classes.searchInput}
+              className={`${classes.searchInput} ${isMobileSearchOpen ? classes.mobileSearchInputOpen : ''}`}
             />
             {showClearButton && (
               <button className={classes.clearButton} onClick={handleClear}>
@@ -94,11 +97,11 @@ const SearchBar = () => {
               </button>
             )}
           </div>
-          {isFocused && (
+          {isFocused && isMobileSearchOpen && (
             <div className={classes.results}>
               <ul>
-                {filteredGames.map((game) => (
-                  <li key={game.id}>{game.name}</li>
+                {filteredGames.map((game, index) => (
+                  <li key={index}>{game}</li>
                 ))}
               </ul>
             </div>

@@ -1,3 +1,4 @@
+/* Estilos generales */
 .header {
   display: flex;
   align-items: center;
@@ -43,6 +44,7 @@
   height: 20px;
   margin-right: 5px;
   margin-left: 5px;
+  cursor: pointer;
 }
 
 .searchInput {
@@ -125,4 +127,80 @@ ul li:last-child {
 .userProfile span {
   margin-right: 10px;
   cursor: pointer;
+}
+
+/* Estilos específicos para dispositivos móviles */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .logo {
+    width: 120px;
+  }
+
+  .searchBarContainer {
+    width: 100%;
+    display: none;
+  }
+
+  .mobileSearchOpen .searchBarContainer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .searchBar {
+    width: 100%;
+    padding: 10px;
+    box-shadow: none;
+  }
+
+  .searchIcon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .searchInput {
+    display: none;
+  }
+
+  .mobileSearchOpen .searchInput {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+  }
+
+  .clearButton {
+    margin-left: 10px;
+  }
+
+  .results {
+    position: relative;
+    top: 0;
+    width: 100%;
+    padding: 10px;
+  }
+
+  ul li {
+    padding: 8px;
+    font-size: 16px;
+  }
+
+  .userProfile {
+    flex-direction: row;
+    margin-top: 10px;
+  }
+
+  .userProfile img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .profilePic {
+    width: 25px;
+    height: 25px;
+  }
 }
