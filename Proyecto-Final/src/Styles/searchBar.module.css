@@ -1,4 +1,4 @@
-/* Estilos generales */
+/* Estilo general */
 .header {
   display: flex;
   align-items: center;
@@ -129,7 +129,7 @@ ul li:last-child {
   cursor: pointer;
 }
 
-/* Estilos específicos para dispositivos móviles */
+/* Estilo específico para mobile */
 @media (max-width: 768px) {
   .header {
     flex-direction: column;
@@ -142,13 +142,7 @@ ul li:last-child {
 
   .searchBarContainer {
     width: 100%;
-    display: none;
-  }
-
-  .mobileSearchOpen .searchBarContainer {
-    display: flex;
-    justify-content: center;
-    width: 100%;
+    display: block; 
   }
 
   .searchBar {
@@ -163,11 +157,7 @@ ul li:last-child {
   }
 
   .searchInput {
-    display: none;
-  }
-
-  .mobileSearchOpen .searchInput {
-    display: block;
+    display: block; 
     width: 100%;
     padding: 12px;
     font-size: 16px;

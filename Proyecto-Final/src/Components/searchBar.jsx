@@ -11,7 +11,6 @@ const SearchBar = () => {
   const [filteredGames, setFilteredGames] = useState([]);
   const [isFocused, setIsFocused] = useState(false);
   const [showClearButton, setShowClearButton] = useState(false);
-  const [isMobileSearchOpen, setIsMobileSearchOpen] = useState(false);
 
   const inputRef = useRef(null);
 
@@ -54,10 +53,8 @@ const SearchBar = () => {
   };
 
   const handleSearchIconClick = () => {
-    setIsMobileSearchOpen(!isMobileSearchOpen);
-    if (!isMobileSearchOpen) {
-      inputRef.current.focus();
-    }
+    setIsFocused(true);
+    inputRef.current.focus();
   };
 
   const handleKeyPress = (e) => {
@@ -74,7 +71,7 @@ const SearchBar = () => {
         <div className={classes.logoAndTitle}>
           <img src={whiteLogo} alt="GAMEFINDER Logo" className={classes.logo} />
         </div>
-        <div className={`${classes.searchBarContainer} ${isMobileSearchOpen ? classes.mobileSearchOpen : ''}`}>
+        <div className={classes.searchBarContainer} onFocus={handleFocus} onBlur={handleBlur}>
           <div className={classes.searchBar}>
             <img
               src={searchIcon}
@@ -89,7 +86,7 @@ const SearchBar = () => {
               onChange={handleSearch}
               onKeyPress={handleKeyPress}
               placeholder="Search game..."
-              className={`${classes.searchInput} ${isMobileSearchOpen ? classes.mobileSearchInputOpen : ''}`}
+              className={classes.searchInput}
             />
             {showClearButton && (
               <button className={classes.clearButton} onClick={handleClear}>
@@ -97,7 +94,7 @@ const SearchBar = () => {
               </button>
             )}
           </div>
-          {isFocused && isMobileSearchOpen && (
+          {isFocused && (
             <div className={classes.results}>
               <ul>
                 {filteredGames.map((game, index) => (
