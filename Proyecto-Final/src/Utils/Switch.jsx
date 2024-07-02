@@ -2,6 +2,7 @@ import React, { useState} from 'react';
 import classes from '../Styles/Switch.module.css';
 
 const Switch = ({color, onChangeHandler}) => {
+  
   const [DarkMode, setDarkMode] = useState(false);
 
   const switchDarkMode = () => {

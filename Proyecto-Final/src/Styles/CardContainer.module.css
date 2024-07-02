@@ -6,6 +6,7 @@
   margin-top: 0px;
   margin-left: 290px;
   margin-bottom: 10px;
+
 }
 
 .DivGral {
@@ -13,13 +14,16 @@
   min-height: 100vh; 
   display: flex;
   flex-direction: column;
+  position: relative;
+  overflow: hidden; /* Oculta el scroll del body */
+
 }
 
-.SearchBar{
+.SearchBar {
   display: flex;
 }
 
-.Switch{
+.Switch {
   display: flex;
   margin-top: 75px;
   height: 100px;
@@ -28,9 +32,18 @@
   margin-right: 20px;
 }
 
-@media (max-width: 1035px) {
-  .Container {
-    justify-content: center;
-    margin-left: 0;
-  }
+
+.modalOverlay {
+  position: fixed; /* Fijo en la pantalla */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo difuminado */
+  z-index: 1000; /* Asegura que esté por encima de otros contenidos */
+  display: flex; /* Inicialmente oculto */
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto; /* Habilita el scroll vertical si es necesario */
 }
+

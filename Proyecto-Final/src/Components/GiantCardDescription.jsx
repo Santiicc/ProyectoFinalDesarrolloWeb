@@ -3,8 +3,8 @@ import classes from "../Styles/GiantCardDescription.module.css";
 import Platform from "../Utils/Platform";
 import { IconCloseBlack } from "../Utils/Icons";
 
-const GiantCardDescription = ({mode,namegame, platforms, description }) => {
-  const [isVisible, setIsVisible] = useState(true);
+const GiantCardDescription = ({mode,namegame, platforms, description, onClick}) => {
+
 
   const truncarDescription = (text, maxLength) => {
     if (text.length <= maxLength) {
@@ -13,17 +13,9 @@ const GiantCardDescription = ({mode,namegame, platforms, description }) => {
     return text.substring(0, maxLength) + '...';
   };
 
-  const handleCloseClick = () => {
-    setIsVisible(false);
-  };
-
-  if (!isVisible) {
-    return null;
-  }
-
   return (
     <div className={classes.DivGral} style={{backgroundColor:mode.includes("dark")?"#303030":"#F0F0F0"}}>
-      <button className={classes.IconClose} onClick={handleCloseClick}>
+      <button className={classes.IconClose} onClick={onClick}>
         <IconCloseBlack />
       </button>
 

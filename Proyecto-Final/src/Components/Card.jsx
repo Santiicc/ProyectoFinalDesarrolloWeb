@@ -4,7 +4,7 @@ import classes2 from '../Styles/CardWhite.module.css';
 import Platform from "../Utils/Platform";
 import { IconHeart } from "../Utils/Icons";
 
-const Card = ({ mode, photogame, namegame, date, genres, ranking, platforms }) => {
+const Card = ({ mode, photogame, namegame, date, genres, ranking, platforms, onClick, gameId }) => {
   const [liked, setLiked] = useState(false);
 
   const HeartClick = () => {
@@ -20,11 +20,24 @@ const Card = ({ mode, photogame, namegame, date, genres, ranking, platforms }) =
     return text;
   };
 
+  const [showModal, setShowModal] = useState(false);
+  const [selectedGameId, setSelectedGameId] = useState(null);
+
+  const handleClick = (id) => {
+    setSelectedGameId(id);
+    setShowModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+    setSelectedGameId(null);
+  };
+
   const genreText = genres.join(", ");
   const truncatedGenreText = truncateText(genreText, 30);
 
   return (
-    <div className={currentClasses.CardDiv}>
+    <div className={currentClasses.CardDiv} onClick={onClick}>
       <div className={classes.DivImg} style={{ backgroundImage: `url(${photogame})` }}>
         <button className={classes.HeartButton} onClick={HeartClick}>
           <IconHeart fill={liked ? 'white' : 'none'} />
