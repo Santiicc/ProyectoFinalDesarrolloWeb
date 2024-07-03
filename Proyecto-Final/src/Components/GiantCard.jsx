@@ -50,7 +50,7 @@ const GiantCard = ({ photogame, namegame, date, genres, platforms, description,d
           </div>
           
           <div className={currentClasses.Description}>
-            {truncarDescription(description, 315)} 
+            {truncarDescription(description, 290)} 
           </div>
 
           <div className={classes.DivButtons}>

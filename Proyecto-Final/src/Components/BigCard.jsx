@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import classes from "../Styles/BigCard.module.css";
 import Platform from "../Utils/Platform";
 import { IconHeart } from "../Utils/Icons";
-import classes2 from '../Styles/BigCardWhite.module.css'
+import classes2 from '../Styles/BigCardWhite.module.css';
 
-const BigCard = ({mode,photogame, namegame, date, genres, ranking, platforms, description }) => {
+const BigCard = ({ mode, photogame, namegame, date, genres, ranking, platforms, description, onClick }) => {
   const [liked, setLiked] = useState(false);
 
   const truncarDescription = (text, maxLength) => {
-    if (text.length <= maxLength) {
+    if (!text || text.length <= maxLength) {
       return text;
     }
     return text.substring(0, maxLength) + '...';
@@ -21,7 +21,7 @@ const BigCard = ({mode,photogame, namegame, date, genres, ranking, platforms, de
   const currentClasses = mode.includes('dark') ? classes : classes2;
 
   return (
-    <div className={currentClasses.CardDiv}>
+    <div className={currentClasses.CardDiv} onClick={onClick}>
       <div className={classes.DivImg} style={{ backgroundImage: `url(${photogame})` }}>
         <button className={`${classes.HeartButton} ${liked ? classes.Liked : ''}`} onClick={HeartClick}>
           <IconHeart fill={liked ? 'white' : 'none'} />
@@ -47,14 +47,14 @@ const BigCard = ({mode,photogame, namegame, date, genres, ranking, platforms, de
             
             <div className={classes.Platforms}>
               {platforms.map((p, index) => (
-                <Platform key={index} platform={p} mode={mode}  />
+                <Platform key={index} platform={p} mode={mode} />
               ))}
             </div>
           </div>
         </div>
 
         <div className={currentClasses.DivDescription}>
-          {truncarDescription(description, 394)} 
+          {description && truncarDescription(description, 180)}
         </div>
       </div>
     </div>

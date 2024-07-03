@@ -1,25 +1,41 @@
-.Container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px; 
-  justify-content: flex-start;
-  margin-top: 0px;
-  margin-left: 290px;
-  margin-bottom: 10px;
-
-}
-
 .DivGral {
   width: 100%;
-  min-height: 100vh; 
+  height: 100vh;
   display: flex;
   flex-direction: column;
   position: relative;
-  overflow: hidden; /* Oculta el scroll del body */
-
+  overflow: hidden; 
 }
 
-.SearchBar {
+.DivSearch{
+  display: flex;
+  width: 100%;
+  height: 70px;
+}
+
+.SwDiv{
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.VwDiv{
+  gap: 5px;
+  display: flex;
+  flex-direction: row;
+}
+
+.Psw{
+  
+
+font-family: Exo;
+font-size: 15px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+.NwTre{
   display: flex;
 }
 
@@ -32,18 +48,124 @@
   margin-right: 20px;
 }
 
+.DivSide_Cards {
+  display: flex;
+  flex-direction: row;
+  gap: 35px;
+  margin: 0;
+  margin-top: 50px;
+  overflow-y: auto;
+}
+
+.DivSide {
+  display: flex;
+  margin-left: 15px;
+}
+
+.Container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+  overflow-y: auto;
+}
+
 
 .modalOverlay {
-  position: fixed; /* Fijo en la pantalla */
+  position: fixed; 
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Fondo difuminado */
-  z-index: 1000; /* Asegura que esté por encima de otros contenidos */
-  display: flex; /* Inicialmente oculto */
+  background-color: rgba(0, 0, 0, 0.5); 
+  z-index: 1000;
+  display: none; 
   justify-content: center;
   align-items: center;
-  overflow-y: auto; /* Habilita el scroll vertical si es necesario */
+  overflow-y: auto;
 }
+
+@media (max-width: 767px) {
+  .DivSide{
+    display: none; 
+  }
+
+  .DivSearch{
+    justify-content: center;
+    width: 100vw;
+    margin-left: 200px;
+  }
+
+  .DivSide_Cards {
+    justify-content: flex-end;
+  }
+  .Container {
+    display: block;
+    padding: 15px;
+  }
+
+  .modalOverlay{
+    
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .NwTre{display: none;}
+  .VwDiv{display: none;}
+  .Switch{justify-content: center;}
+
+  
+
+
+}
+
+
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .DivSide {
+    display: none; 
+  }
+
+  .DivSide_Cards {
+    width: 100%; 
+    justify-content: center; 
+    padding: 0 20px; 
+    box-sizing: border-box; 
+    margin-left: 100px;
+  }
+
+
+  .Container {
+    display: grid; 
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 20px; 
+    justify-items: center; 
+    margin-bottom: 10px;
+    overflow-y: auto;
+  }
+
+  .DivSearch {
+    justify-content: center;
+    width: 100vw;
+    margin-left: 200px;
+  }
+
+  .modalOverlay {
+    width: 100vw;
+    height: 100vh;
+  }
+
+  
+
+  .VwDiv {
+    display: none;
+  }
+
+  .Switch {
+    justify-content: center;
+  }
+}
+
+
 

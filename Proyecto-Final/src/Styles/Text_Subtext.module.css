@@ -1,11 +1,11 @@
-/* Asegúrate de no tener márgenes */
+
 .Div {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    gap: 2px; /* Espacio de 2 píxeles entre los elementos */
-    margin: 0; /* Eliminar márgenes */
-    padding: 0; /* Eliminar padding si hay alguno */
+    gap: 2px; 
+    margin: 0; 
+    padding: 0; 
   }
   
   .Text {
@@ -16,8 +16,8 @@
     font-style: normal;
     font-weight: 800;
     line-height: normal;
-    margin: 0; /* Eliminar márgenes */
-    padding: 0; /* Eliminar padding si hay alguno */
+    margin: 0; 
+    padding: 0; 
   }
   
   .SubText {
@@ -26,7 +26,7 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    margin: 0; /* Eliminar márgenes */
-    padding: 0; /* Eliminar padding si hay alguno */
+    margin: 0; 
+    padding: 0; 
   }
   

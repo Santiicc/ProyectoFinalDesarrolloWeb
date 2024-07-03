@@ -1,5 +1,5 @@
 export const getGames = async () => {
-    const url = "https://api.rawg.io/api/games?key=990db89b2ae64cecbdceca51022ef2a2&page_size=30&dates=2023-09-01,2023-09-30";
+    const url = "https://api.rawg.io/api/games?key=990db89b2ae64cecbdceca51022ef2a2&page_size=40&dates=2023-09-01,2023-11-30";
     try {
       const response = await fetch(url);
       if (response.ok) {
