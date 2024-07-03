@@ -1,0 +1,11 @@
+.DivTrailer{
+    display: flex;
+    width: 392px;
+    height: 217px;
+    background-position: center;
+    align-items: center;
+    justify-content: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}

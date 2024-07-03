@@ -1,0 +1,32 @@
+
+.Div {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 2px; 
+    margin: 0; 
+    padding: 0; 
+  }
+  
+  .Text {
+    width: 400px;
+    flex-shrink: 0;
+    font-family: Exo;
+    font-size: 38px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    margin: 0; 
+    padding: 0; 
+  }
+  
+  .SubText {
+    font-family: Exo;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0; 
+    padding: 0; 
+  }
+  

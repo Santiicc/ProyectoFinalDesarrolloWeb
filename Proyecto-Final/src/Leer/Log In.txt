@@ -1,0 +1,6 @@
+LogIn
+-Si se selecciona "Not registered yet? Register Now" te podes registrar 
+- al apretar "LogIn" te podes loguear con el Email y Password que te registraste 
+- Si el email no tiene @ aparece el mensaje de "Invalid Email"
+- si el email es correcto pero la contraseña no es la que se agrego en el registro aparece el cartel "Invalid email or password"
+

@@ -1,0 +1,253 @@
+
+.DivGral {
+    display: flex;
+    flex-direction: column;
+    border-radius: 24px;
+    background: #F0F0F0;
+    width: 949px;
+    height: 700px;
+}
+
+.DivNameGame {
+    display: flex;
+    margin-top: 16px;
+    height: 48px;
+    margin-left: 30px;
+}
+
+.NameGame {
+    color: #FFF;
+    text-shadow: 0px 0px 12px rgba(0, 0, 0, 0.25);
+    font-family: Exo;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    margin: 0;
+}
+
+.DivImg {
+    width: 949px;
+    height: 548px;
+    flex-shrink: 0;
+    border-radius: 24px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, #F0F0F0 63.23%, #F0F0F0 75.85%);
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.Platforms {
+    display: flex;
+    gap: 22px;
+    margin-left: auto;
+    margin-left: 32px;
+    margin-top: 125px;
+}
+
+.Description {
+    display: flex;
+    width: 603px;
+    height: 100px;
+    flex-shrink: 0;
+    color: #303030;
+    font-family: "Open Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 10px;
+    margin-left: 32px;
+}
+
+.IconClose {
+    display: flex;
+    margin-left: 895px;
+    padding: 0;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: transparent;
+}
+
+.Icons {
+    display: flex;
+    margin-top: 12px;
+}
+
+.ColumnLeft {
+    display: flex;
+    gap: 24px;
+    height: 268px;
+    flex-direction: column;
+}
+
+.TextSubtext {
+    display: flex;
+    gap: 2px;
+    width: 226px;
+    height: 48px;
+    flex-direction: column;
+}
+
+.ColumnR {
+    display: flex;
+    gap: 24px;
+    height: 188px;
+    flex-direction: column;
+}
+
+.DivLeft {
+    display: flex;
+    height: 465px;
+    width: 603px;
+    margin-left: 32px;
+    margin-bottom: 290px;
+}
+
+.DivImages {
+    display: flex;
+    width: 380px;
+    height: 450px;
+}
+
+.DivButtons {
+    display: flex;
+    margin-left: 32px;
+    margin-top: 1px;
+    flex-direction: row;
+    gap: 24px;
+}
+
+.DivMidLeft {
+    display: flex;
+    width: 228px;
+    height: 118px;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.DivDGRP {
+    display: flex;
+    width: 476px;
+    height: 118px;
+    flex-direction: row;
+    gap: 24px;
+    margin-left: 32px;
+    margin-top: 18px;
+}
+
+.DivPA {
+    display: flex;
+    flex-direction: row;
+    height: 48px;
+    gap: 24px;
+    width: 476px;
+    margin-left: 32px;
+    margin-top: 0px;
+}
+
+.LastDiv {
+    display: flex;
+    flex-direction: row;
+    margin-left: 32px;
+    gap: 24px;
+    height: 48px;
+    width: 476px;
+    margin-top: 15px;
+}
+
+.Info {
+    color: #939393;
+    font-family: Exo;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin: 0;
+}
+
+.Info2 {
+    color: #515151;
+    font-family: Exo;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration-line: underline;
+    margin: 0;
+}
+
+
+@media (max-width: 767px) {
+  .DivGral {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+
+  }
+
+  .DivImg {
+    width: 100vw;
+    height: auto;
+    border-radius: 0;
+  }
+
+  .NameGame {
+    font-size: 24px; 
+    margin-left: 16px;
+  }
+
+  .DivNameGame {
+    margin: 16px 0 0 0;
+    height: auto;
+  }
+
+  .Description {
+    width: calc(100% - 32px); 
+    margin: 10px 16px;
+    margin-bottom: 55px;
+  }
+
+  .DivButtons {
+    display: none;
+  }
+
+
+ .LastDiv{
+    flex-direction: column;
+ }
+
+ .DivDGRP{
+    flex-direction: column;
+    margin-bottom: 140px;
+ }
+
+ .DivPA{
+    flex-direction: column;
+    margin-bottom: 80px;
+ }
+
+  .Platforms {
+    margin-left: 16px;
+    margin-top: 16px;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .Icons {
+    justify-content: flex-start;
+    width: calc(100% - 32px);
+    margin: 12px 16px;
+  }
+
+  .IconClose {
+    margin-left: calc(100% - 52px);
+    margin-top: 16px;
+    
+  }
+
+  
+}

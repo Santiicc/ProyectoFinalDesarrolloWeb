@@ -1,0 +1,129 @@
+.DivGral{
+    display: flex;
+    flex-direction: column;
+    border-radius: 24px;
+    background: #303030;
+    width: 949px;
+    height: 700px;
+    
+}
+
+.DivImg {
+    width: 949px;
+    height: 548px;
+    flex-shrink: 0;
+    border-radius: 24px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, #F0F0F0 63.23%, #F0F0F0 75.85%);
+    align-items: center;
+    background-size: cover;  
+    background-position: center;  
+    background-repeat: no-repeat;  
+}
+
+.Description {
+    display: flex;
+    width: 603px;
+    height: 100px;
+    flex-shrink: 0;
+    color:  #fff;
+    font-family: "Open Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 10px;
+    margin-left: 32px;
+}
+
+.Info{
+    color: #939393;
+font-family: Exo;
+font-size: 16px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+margin: 0;
+}
+
+.Info2{color: #fff;
+    font-family: Exo;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration-line: underline;
+    margin: 0;
+}
+
+
+@media (max-width: 767px) {
+    .DivGral {
+      width: 100vw;
+      height: 100vh;
+      border-radius: 0;
+  
+    }
+  
+    .DivImg {
+      width: 100vw;
+      height: auto;
+      border-radius: 0;
+    }
+  
+    .NameGame {
+      font-size: 24px;
+      margin-left: 16px;
+    }
+  
+    .DivNameGame {
+      margin: 16px 0 0 0;
+      height: auto;
+    }
+  
+    .Description {
+      width: calc(100% - 32px); 
+      margin: 10px 16px;
+      margin-bottom: 55px;
+    }
+  
+    .DivButtons {
+      display: none;
+    }
+  
+  
+   .LastDiv{
+      flex-direction: column;
+   }
+  
+   .DivDGRP{
+      flex-direction: column;
+      margin-bottom: 140px;
+   }
+  
+   .DivPA{
+      flex-direction: column;
+      margin-bottom: 80px;
+   }
+  
+    .Platforms {
+      margin-left: 16px;
+      margin-top: 16px;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+  
+    .Icons {
+      justify-content: flex-start;
+      width: calc(100% - 32px);
+      margin: 12px 16px;
+    }
+  
+    .IconClose {
+      margin-left: calc(100% - 52px);
+      margin-top: 16px;
+      
+    }
+  
+    
+  }
+  

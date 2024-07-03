@@ -1,0 +1,138 @@
+.CardDiv {
+  width: 363px;
+  height: 314px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  background: #303030;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(250, 246, 246, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+  margin-left: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.CardDiv:hover {
+  transform: scale(1.01); /* Zoom */
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.4);
+}
+
+.CardDiv2 {
+  padding: 16px;
+  flex-grow: 1; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+  box-sizing: border-box;
+}
+
+.PrimerDiv {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.DivPyG{
+  display: flex;
+} 
+
+.Namegame {
+  color: #FFF;
+  font-family: 'Exo', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.Ranking {
+  color: #36B972;
+  text-align: right;
+  font-family: 'Exo', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.Info {
+  color: #939393;
+  font-family: 'Exo', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0;
+  flex-direction: column;
+  text-align: justify;
+}
+
+.Info2 {
+  color: #FFF;
+  font-family: 'Exo', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  margin: 0;
+  flex-direction: column;
+  text-align: justify;
+ 
+}
+
+.Platforms {
+  display: flex;
+  gap: 12px;
+  margin-left: auto;
+}
+
+.GyP{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 66%;
+  gap: 4px;
+}
+
+.GyPintern{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.RyG{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-right: 25px;
+  gap: 4px;
+}
+
+.HeartButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  padding: 0;
+}
+
+.HeartButton:focus {
+  outline: none;
+}
+
+.DivImg {
+  display: flex;
+  width: 363px;
+  height: 179px;
+  flex-shrink: 0;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  margin-bottom: 0;
+  background-size: cover;
+  background-position: center;
+  position: relative; 
+  align-items: center;
+  justify-content: center;
+}

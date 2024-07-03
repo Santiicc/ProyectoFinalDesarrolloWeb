@@ -1,0 +1,43 @@
+.CardDiv {
+  width: 363px;
+  height: 314px;
+  flex-shrink: 0;
+  border: 1px solid white;
+  border-radius: 12px;
+  background: #ffffff;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-left: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.CardDiv:hover {
+  transform: scale(1.01); 
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); 
+}
+
+.Namegame {
+  color: #515151;
+  font-family: 'Exo', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+}
+
+
+
+.Info2 {
+  color: #515151;
+  font-family: 'Exo', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  margin: 0;
+  flex-direction: column;
+  text-align: justify;
+ 
+}
