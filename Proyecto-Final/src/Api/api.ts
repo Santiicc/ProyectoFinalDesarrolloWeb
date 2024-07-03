@@ -1,5 +1,5 @@
 export const getGames = async () => {
-    const url = "https://api.rawg.io/api/games?key=990db89b2ae64cecbdceca51022ef2a2&page_size=40&dates=2023-09-01,2023-11-30";
+    const url = "https://api.rawg.io/api/games?key=5ab14b1518de492b8cc6eac52a5c9264&page_size=40&dates=2023-09-01,2023-11-30";
     try {
       const response = await fetch(url);
       if (response.ok) {
@@ -18,7 +18,7 @@ export const getGames = async () => {
 
 
   export const getGameById = async (gameId) => {
-    const url = `https://api.rawg.io/api/games/${gameId}?key=990db89b2ae64cecbdceca51022ef2a2`;
+    const url = `https://api.rawg.io/api/games/${gameId}?key=5ab14b1518de492b8cc6eac52a5c9264`;
   
     try {
       const response = await fetch(url);
